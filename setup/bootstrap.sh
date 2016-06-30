@@ -18,6 +18,9 @@ echo "Installing core stuff"
 echo "--------------------"
 echo ' '
 install 'git core' git-core
+install 'libssl-dev' libssl-dev
+install 'libreadline-dev' libreadline-dev
+install 'zlib1g-dev' zlib1g-dev
 
 install 'apparmor' apparmor
 install 'apparmor-utils' apparmor-utils
