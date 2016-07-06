@@ -18,6 +18,7 @@ echo "Installing core stuff"
 echo "--------------------"
 echo ' '
 install 'git core' git-core
+install 'curl' curl
 install 'libssl-dev' libssl-dev
 install 'libreadline-dev' libreadline-dev
 install 'zlib1g-dev' zlib1g-dev
@@ -44,15 +45,21 @@ git clone https://github.com/sstephenson/rbenv-gem-rehash.git ~/.rbenv/plugins/r
 rbenv install 2.3.1
 rbenv global 2.3.1
 
-
 echo ' '
 echo "-----------------"
-echo "Installing rspec"
+echo "Installing bundler"
 echo "-----------------"
 echo ' '
 cd /vagrant
 echo "gem: --no-ri --no-rdoc" > ~/.gemrc
-gem install rspec >/dev/null 2>&1
+gem install bundler >/dev/null 2>&1
+
+echo ' '
+echo "--------------"
+echo "Running bundle"
+echo "--------------"
+echo ' '
+bundle
 
 sudo update-locale LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 LC_ALL=en_US.UTF-8
 
@@ -64,11 +71,11 @@ echo "--------------------------"
 echo ' '
 
 function set_profile {
-    echo Installing $1
+    echo Set Profile $1
     sudo cp ./apparmor_profiles/$1 /etc/apparmor.d/$1
 }
 
-set_profile home.vagrant..rbenv.shims.rspec
+set_profile home.vagrant..rbenv.shims.rake
 
 sudo /etc/init.d/apparmor reload
 
