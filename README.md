@@ -1,5 +1,5 @@
 #Readme
-In this prototype allow rake execute but not allow that it files be modified.
+In this prototype allow rake execute but not allow that all file be modified.
 The apparmor_profiles folder have a profile for rake. To controller other process you would create new profile.
 
 ##Execute test.
@@ -9,7 +9,7 @@ rake
 ```
 Allow all test
 ```
-sudo aa-complain home.vagrant..rbenv.shims.rspec
+sudo aa-complain home.vagrant..rbenv.shims.rake
 rake
 ```
 
