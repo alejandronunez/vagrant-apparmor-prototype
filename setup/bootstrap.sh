@@ -72,7 +72,7 @@ echo ' '
 
 function set_profile {
     echo Set Profile $1
-    sudo cp ./apparmor_profiles/$1 /etc/apparmor.d/$1
+    sudo cp /vagrant/apparmor_profiles/$1 /etc/apparmor.d/$1
 }
 
 set_profile home.vagrant..rbenv.shims.rake
