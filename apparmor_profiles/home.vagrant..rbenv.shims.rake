@@ -25,7 +25,9 @@
   /vagrant/rakefile r,
   /vagrant/spec/ r,
   /vagrant/spec/files/ r,
-  /vagrant/spec/files/create_file_spec.rb r,
+  /vagrant/spec/files/command_spec.rb r,
+  /vagrant/spec/files/file_spec.rb r,
+  /vagrant/spec/files/network_spec.rb r,
   /vagrant/spec/files/temp/ r,
   /vagrant/spec/spec_helper.rb r,
 
