@@ -5,7 +5,6 @@ ruby '2.3.1'
 # Tools
 
 gem 'foreman'
-gem 'rails-api', require: 'rails-api/action_controller/api'
 gem 'redis'
 
 # Local
