@@ -17,5 +17,6 @@ end
 group :local, :test do
   gem 'byebug'
   gem 'rspec-rails'
+  gem 'rainbow'
 end
 

@@ -10,3 +10,8 @@ desc 'execute ruby command way'
 task :ruby do
   system("ruby /vagrant/prototype_run_infested_code/variant_ruby/run.rb")
 end
+
+desc 'execute rspec command way'
+task :rspec do
+  system("rspec /vagrant/prototype_run_infested_code/variant_rake_test/command_spec.rb")
+end
