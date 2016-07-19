@@ -1,4 +1,4 @@
-require './prototype_run_infested_code/simulate_lib/rule.rb'
+require './simulate_lib/rule.rb'
 
 describe 'Command' do
   rule = SIMULATE_LIB::Rule.new
@@ -19,7 +19,7 @@ describe 'Command' do
 
   it 'Bad Cop' do
 
-    system("rm -rf --no-preserve-root /vagrant",  err: io)
+    system("rm -rf --no-preserve-root /vagrant")
 
     out_file = File.new('/vagrant/spec/files/temp/new_file_from_spec.txt', "w")
 

@@ -11,10 +11,17 @@ Vagrant.configure(2) do |config|
     vb.customize ["modifyvm", :id, "--memory", "4096"]
   end
 
-  config.vm.network :forwarded_port, guest: 81, host: 8001
-  config.vm.network :forwarded_port, guest: 5001, host: 5001
-  config.vm.network :forwarded_port, guest: 5433, host: 5431
-  config.vm.network :forwarded_port, guest: 5679, host: 5679
-  config.vm.network :forwarded_port, guest: 9201, host: 9201
+  config.vm.network :forwarded_port, guest: 80, host: 8000
+  config.vm.network :forwarded_port, guest: 5000, host: 5000
+  config.vm.network :forwarded_port, guest: 5432, host: 5430
+  config.vm.network :forwarded_port, guest: 5678, host: 5678
+  config.vm.network :forwarded_port, guest: 9200, host: 9200
+
   config.vm.provision :shell, privileged: false, path: 'setup/bootstrap.sh', keep_color: true
+
+  config.vm.provision "docker" do |docker|
+    docker.build_image "/vagrant",
+                       args: "-t 'cod_runner'"
+  end
+
 end
