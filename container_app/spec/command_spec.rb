@@ -19,9 +19,9 @@ describe 'Command' do
 
   it 'Bad Cop' do
 
+    File.new('/usr/app/temp_to_rm/new_file.txt', "w")
     system("rm -rf /usr/app/temp_to_rm")
 
-    File.new('/usr/app/temp_to_rm/new_file.txt', "w")
 
   end
 end
