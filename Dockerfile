@@ -14,4 +14,3 @@ WORKDIR /usr/app
 
 COPY ./container_app /usr/app
 RUN bundle install
-RUN bundle clean
