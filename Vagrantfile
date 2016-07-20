@@ -17,11 +17,11 @@ Vagrant.configure(2) do |config|
   config.vm.network :forwarded_port, guest: 5678, host: 5678
   config.vm.network :forwarded_port, guest: 9200, host: 9200
 
-  config.vm.provision :shell, privileged: false, path: 'setup/bootstrap.sh', keep_color: true
-
   config.vm.provision "docker" do |docker|
     docker.build_image "/vagrant",
                        args: "-t 'cod_runner'"
   end
+
+  config.vm.provision :shell, privileged: false, path: 'setup/bootstrap.sh', keep_color: true
 
 end

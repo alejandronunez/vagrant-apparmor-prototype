@@ -6,7 +6,7 @@ ruby '2.3.1'
 
 gem 'foreman'
 gem 'redis'
-gem 'docker-api'
+gem 'json_pure'
 
 # Local
 group :local do

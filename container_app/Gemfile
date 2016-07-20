@@ -7,9 +7,5 @@ ruby '2.3.1'
 # gem 'redis'
 gem 'rspec'
 # gem 'rspec-rails'
-
-# Local & Testing
-group :local, :test do
-  gem 'rainbow'
-end
+gem 'json_pure'
 

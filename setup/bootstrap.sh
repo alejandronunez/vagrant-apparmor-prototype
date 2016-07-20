@@ -75,7 +75,7 @@ function set_profile {
     sudo cp /vagrant/apparmor_profiles/$1 /etc/apparmor.d/$1
 }
 
-set_profile home.vagrant..rbenv.shims.rake
+set_profile secure-docker
 
 sudo /etc/init.d/apparmor reload
 
@@ -85,3 +85,10 @@ echo "--------------------------"
 echo "You're all set... AMERICA!"
 echo "--------------------------"
 echo ' '
+
+echo "--------------------------"
+echo "run rake"
+echo "--------------------------"
+echo ' '
+
+rake

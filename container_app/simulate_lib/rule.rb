@@ -1,13 +1,9 @@
-require 'rainbow/ext/string'
+require 'json'
 
 module SIMULATE_LIB
   class Rule
     def trigger_violation(msg)
-      puts ('LIB:RULE:'+msg.to_s).background(:yellow).foreground(:aliceblue)
-    end
-
-    def validate
-
+      puts ({run_id:RUN_ID,msg:msg}.to_json)
     end
   end
 end
