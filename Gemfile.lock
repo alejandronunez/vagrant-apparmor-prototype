@@ -51,17 +51,13 @@ GEM
     concurrent-ruby (1.0.2)
     debug_inspector (0.0.2)
     diff-lcs (1.2.5)
-    docker-api (1.29.0)
-      excon (>= 0.38.0)
-      json
     erubis (2.7.0)
-    excon (0.51.0)
     foreman (0.82.0)
       thor (~> 0.19.1)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
-    json (2.0.1)
+    json_pure (2.0.1)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.4)
@@ -145,8 +141,8 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   byebug
-  docker-api
   foreman
+  json_pure
   rails (= 5.0.0)
   rainbow
   redis
