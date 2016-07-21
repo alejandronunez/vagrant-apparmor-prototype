@@ -5,6 +5,7 @@ RUN apk add bash
 # Install ruby and ruby-bundler
 RUN apk add ruby
 RUN apk add ruby-bundler
+RUN apk add curl
 
 # Clean APK cache
 RUN rm -rf /var/cache/apk/*
