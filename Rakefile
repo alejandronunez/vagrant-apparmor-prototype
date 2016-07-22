@@ -13,7 +13,7 @@ task :eval do
   user_rule = "rule.trigger_violation(COD)"
   cod = "Violation in cod"
 
-  json_result = `docker run --rm cod_runner ruby /usr/app/run.rb "#{run_id}" "#{user_rule}" "#{cod}"`
+  json_result = `docker run --security-opt apparmor=secure-docker --rm cod_runner ruby /usr/app/run.rb "#{run_id}" "#{user_rule}" "#{cod}"`
 
   puts json_result
 
@@ -22,7 +22,15 @@ task :eval do
   user_rule = "system('ls temp_to_rm'); puts '#########'; system('rm -rf /usr/app/temp_to_rm'); puts '#########'; system('ls temp_to_rm'); rule.trigger_violation(COD)"
   cod = "Remove 'temp_to_rm' folder"
 
-  json_result = `docker run --rm cod_runner ruby /usr/app/run.rb "#{run_id}" "#{user_rule}" "#{cod}"`
+  json_result = `docker run --security-opt apparmor=secure-docker --rm cod_runner ruby /usr/app/run.rb "#{run_id}" "#{user_rule}" "#{cod}"`
+
+  puts json_result
+
+  #access to network
+  user_rule = "system('curl \"http://google.com\"');"
+  cod = "Violation in cod"
+
+  json_result = `docker run --security-opt apparmor=secure-docker --rm cod_runner ruby /usr/app/run.rb "#{run_id}" "#{user_rule}" "#{cod}"`
 
   puts json_result
 
